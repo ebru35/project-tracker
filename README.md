@@ -29,7 +29,7 @@ A simple CRUD (Create, Read, Update, Delete) web application for managing projec
 2. Open a terminal in the project root.
 3. Run the application using the Maven wrapper:
    ```sh
-   ./mvnw spring-boot:run
+   mvn spring-boot:run
    ```
    *Note: On the first run, this may take a moment to download dependencies.*
 
