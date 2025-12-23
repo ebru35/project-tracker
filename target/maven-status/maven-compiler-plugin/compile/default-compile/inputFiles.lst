@@ -1,6 +1,7 @@
-/Users/tahsin/Documents/project-tracker/src/main/java/com/projects/project_tracker/ProjectTrackerApplication.java
-/Users/tahsin/Documents/project-tracker/src/main/java/com/projects/project_tracker/config/DataSeeder.java
-/Users/tahsin/Documents/project-tracker/src/main/java/com/projects/project_tracker/controller/ProjectController.java
-/Users/tahsin/Documents/project-tracker/src/main/java/com/projects/project_tracker/entity/Project.java
-/Users/tahsin/Documents/project-tracker/src/main/java/com/projects/project_tracker/repository/ProjectRepository.java
-/Users/tahsin/Documents/project-tracker/src/main/java/com/projects/project_tracker/service/ProjectService.java
+/workspaces/project-tracker/src/main/java/com/projects/project_tracker/ProjectTrackerApplication.java
+/workspaces/project-tracker/src/main/java/com/projects/project_tracker/config/DataSeeder.java
+/workspaces/project-tracker/src/main/java/com/projects/project_tracker/controller/ProjectController.java
+/workspaces/project-tracker/src/main/java/com/projects/project_tracker/controller/RootController.java
+/workspaces/project-tracker/src/main/java/com/projects/project_tracker/entity/Project.java
+/workspaces/project-tracker/src/main/java/com/projects/project_tracker/repository/ProjectRepository.java
+/workspaces/project-tracker/src/main/java/com/projects/project_tracker/service/ProjectService.java

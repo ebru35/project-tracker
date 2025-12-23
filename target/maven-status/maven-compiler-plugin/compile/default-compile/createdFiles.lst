@@ -1,1 +1,7 @@
+com/projects/project_tracker/entity/Project.class
 com/projects/project_tracker/ProjectTrackerApplication.class
+com/projects/project_tracker/controller/ProjectController.class
+com/projects/project_tracker/controller/RootController.class
+com/projects/project_tracker/service/ProjectService.class
+com/projects/project_tracker/config/DataSeeder.class
+com/projects/project_tracker/repository/ProjectRepository.class
