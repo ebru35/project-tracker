@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+
+<head>
+    <title>Edit Project</title>
+    <link rel="stylesheet" th:href="@{/css/style.css}">
+</head>
+
+<body>
+
+    <div class="container">
+        <h1>Edit Project</h1>
+
+        <form th:action="@{/projects/{id}(id=${project.id})}" th:object="${project}" method="post">
+
+            <!-- Hidden ID field is automatically handled by th:object but good to be explicit for updates -->
+
+            <div class="form-group">
+                <label for="name">Project Name</label>
+                <input type="text" id="name" th:field="*{name}" placeholder="Enter project name">
+                <div th:if="${#fields.hasErrors('name')}" th:errors="*{name}" class="error-message">Error</div>
+            </div>
+
+            <div class="form-group">
+                <label for="description">Description</label>
+                <textarea id="description" th:field="*{description}" rows="4"></textarea>
+                <div th:if="${#fields.hasErrors('description')}" th:errors="*{description}" class="error-message">Error
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label for="status">Status</label>
+                <select id="status" th:field="*{status}">
+                    <option value="Pending">Pending</option>
+                    <option value="In Progress">In Progress</option>
+                    <option value="Completed">Completed</option>
+                    <option value="On Hold">On Hold</option>
+                </select>
+                <div th:if="${#fields.hasErrors('status')}" th:errors="*{status}" class="error-message">Error</div>
+            </div>
+
+            <div class="form-group">
+                <label for="url">Project URL (Optional)</label>
+                <input type="text" id="url" th:field="*{url}">
+            </div>
+
+            <div style="display: flex; gap: 20px;">
+                <div class="form-group" style="flex: 1;">
+                    <label for="startDate">Start Date</label>
+                    <input type="date" id="startDate" th:field="*{startDate}">
+                </div>
+                <div class="form-group" style="flex: 1;">
+                    <label for="endDate">End Date</label>
+                    <input type="date" id="endDate" th:field="*{endDate}">
+                </div>
+            </div>
+
+            <div class="actions">
+                <button type="submit" class="btn">Update Project</button>
+                <a th:href="@{/projects}" class="btn btn-secondary">Cancel</a>
+            </div>
+        </form>
+    </div>
+
+</body>
+
+</html>

@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Project Tracker - All Projects</title>
+    <link rel="stylesheet" th:href="@{/css/style.css}">
+</head>
+<body>
+
+<div class="container">
+    <div style="display: flex; justify-content: space-between; align-items: center;">
+        <h1>My Projects</h1>
+        <a th:href="@{/projects/new}" class="btn">New Project</a>
+    </div>
+
+    <div th:if="${projects.empty}" class="empty-state">
+        <h3>No projects found.</h3>
+        <p>Start by creating a new one!</p>
+    </div>
+
+    <table th:unless="${projects.empty}">
+        <thead>
+        <tr>
+            <th>Name</th>
+            <th>Status</th>
+            <th>Start Date</th>
+            <th>Actions</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr th:each="project : ${projects}">
+            <td>
+                <a th:href="@{/projects/{id}(id=${project.id})}" th:text="${project.name}" style="font-weight: bold; color: var(--text-color);">Project Name</a>
+            </td>
+            <td>
+                <span th:text="${project.status}" 
+                      th:style="${'padding: 4px 8px; border-radius: 4px; font-size: 0.9em; ' + (project.status == 'Completed' ? 'background: #e1f7d5; color: #2ecc71;' : (project.status == 'In Progress' ? 'background: #fff3cd; color: #f1c40f;' : 'background: #ececec; color: #95a5a6;'))}">Status</span>
+            </td>
+            <td th:text="${project.startDate}">2023-01-01</td>
+            <td class="actions">
+                <a th:href="@{/projects/edit/{id}(id=${project.id})}" class="btn btn-secondary" style="padding: 5px 10px; font-size: 0.8em;">Edit</a>
+                <a th:href="@{/projects/delete/{id}(id=${project.id})}" class="btn btn-danger" style="padding: 5px 10px; font-size: 0.8em;" onclick="return confirm('Are you sure?')">Delete</a>
+            </td>
+        </tr>
+        </tbody>
+    </table>
+</div>
+
+</body>
+</html>
